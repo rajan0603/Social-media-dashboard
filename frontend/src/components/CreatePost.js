@@ -24,7 +24,7 @@ function CreatePost() {
 		formData.append("file", newPost.file);
 
 		axios
-			.post("http://localhost:5000/api/posts", formData)
+			.post("https://social-media-dashboard-backend.vercel.app/api/posts", formData)
 			.then((response) => {
 				setNewPost({ title: "", content: "", file: null });
 			})
