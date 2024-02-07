@@ -14,8 +14,21 @@ const PORT = 5000;
 //     methods: ["POST","GET"],
 //     credentials: true
 // }));
-app.use(cors());
-app.options("*", cors());
+// app.use(cors());
+// app.options("*", cors());
+
+const allowedOrigins = ['https://social-media-dashboard-frontend.vercel.app'];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
  
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
  
