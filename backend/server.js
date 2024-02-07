@@ -1,20 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const cors = require('cors'); // Import cors middleware
 const multer = require('multer');
 const path = require('path');
  
 const app = express();
 const PORT = 3000;
  
-app.use(cors(
-    {
-        origin: ["https://social-media-dashboard-frontend.vercel.app"],
-        methods: ["POST","GET"],
-        credentials: true
-    }
-));
+// Enable CORS middleware
+app.use(cors({
+    origin: ["https://social-media-dashboard-frontend.vercel.app"],
+    methods: ["POST","GET"],
+    credentials: true
+}));
+ 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
  
 const storage = multer.diskStorage({
