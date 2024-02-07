@@ -9,11 +9,7 @@ const app = express();
 const PORT = 3000;
  
 // Enable CORS middleware
-app.use(cors({
-    origin: ["https://social-media-dashboard-frontend.vercel.app"],
-    methods: ["POST","GET"],
-    credentials: true
-}));
+app.use(cors());
  
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
  
