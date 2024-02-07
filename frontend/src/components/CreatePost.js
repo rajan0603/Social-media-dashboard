@@ -25,7 +25,7 @@ function CreatePost() {
         axios.defaults.withCredentials = true;
 
 		axios
-			.post("https://social-media-dashboard-backend.vercel.app/api/posts", formData)
+			.post("https://social-media-dashboard-vjou.onrender.com/api/posts", formData)
 			.then((response) => {
 				setNewPost({ title: "", content: "", file: null });
 			})

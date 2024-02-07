@@ -8,14 +8,14 @@ function Home() {
 
 	useEffect(() => {
 		axios
-			.get("https://social-media-dashboard-backend.vercel.app/api/posts")
+			.get("https://social-media-dashboard-vjou.onrender.com/api/posts")
 			.then((response) => setPosts(response.data))
 			.catch((error) => console.error("Error fetching posts:", error));
 	}, []);
 
 	const handleLike = (postId) => {
 		axios
-			.post(`https://social-media-dashboard-backend.vercel.app/like/${postId}`)
+			.post(`https://social-media-dashboard-vjou.onrender.com/like/${postId}`)
 			.then((response) => {
 				const updatedPosts = posts.map((post) =>
 					post._id === postId ? response.data : post
@@ -27,7 +27,7 @@ function Home() {
 
 	const handleAddComment = (postId, commentText) => {
 		axios
-			.post(`https://social-media-dashboard-backend.vercel.app/api/posts/comment/${postId}`, {
+			.post(`https://social-media-dashboard-vjou.onrender.com/api/posts/comment/${postId}`, {
 				text: commentText,
 			})
 			.then((response) => {
@@ -52,7 +52,7 @@ function Home() {
 								<video width="320" height="240" controls>
 									<source
 										src={
-									`https://social-media-dashboard-backend.vercel.app/uploads/${post.file}`
+									`https://social-media-dashboard-vjou.onrender.com/uploads/${post.file}`
 										}
 										type="video/mp4"
 									/>
@@ -61,7 +61,7 @@ function Home() {
 							) : (
 								<img
 									src={
-									`https://social-media-dashboard-backend.vercel.app/uploads/${post.file}`
+									`https://social-media-dashboard-vjou.onrender.com/uploads/${post.file}`
 									}
 									alt="Post Media"
 								/>
