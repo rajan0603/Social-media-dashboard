@@ -6,6 +6,7 @@ import CreatePost from './components/CreatePost';
 import './App.css';
 
 function App() {
+  
 	return (
 		<Router>
 			<div className="app">

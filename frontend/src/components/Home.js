@@ -4,6 +4,7 @@ import axios from "axios";
 function Home() {
 	const [commentInput, setCommentInput] = useState("");
 	const [posts, setPosts] = useState([]);
+    axios.defaults.withCredentials = true;
 
 	useEffect(() => {
 		axios

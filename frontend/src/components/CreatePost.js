@@ -22,6 +22,7 @@ function CreatePost() {
 		formData.append("title", newPost.title);
 		formData.append("content", newPost.content);
 		formData.append("file", newPost.file);
+        axios.defaults.withCredentials = true;
 
 		axios
 			.post("https://social-media-dashboard-backend.vercel.app/api/posts", formData)
