@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
  
 app.use(cors(
     {
-        origin: ["https://social-media-dashboard-backend.vercel.app/"],
+        origin: [""],
         methods: ["POST","GET"],
         credentials: true
     }
